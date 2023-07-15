@@ -4,6 +4,9 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import RegisterModal from './RegisterModal';
 
 function LoginModal(props) {
   const [show, setShow] = useState(false);    
@@ -19,27 +22,31 @@ function LoginModal(props) {
           <Modal.Title>Sign In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form.Label>Username</Form.Label>
-          <InputGroup className="mb-3">
-            <Form.Control
-              placeholder="Username"
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-          </InputGroup>   
-
-          <InputGroup className="mb-3">
-            <Form.Label>Password</Form.Label>
-
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              aria-label="Password"
-              aria-describedby="basic-addon1"
-            />
-          </InputGroup>
+          <Container>
+            <Col>
+              <Form.Label>Username</Form.Label>
+              <InputGroup className="mb-3">
+                <Form.Control
+                  placeholder="Username"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </InputGroup>   
+    
+              <InputGroup className="mb-3">
+                <Form.Label>Password</Form.Label>
+    
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  aria-label="Password"
+                  aria-describedby="basic-addon1"
+                />
+              </InputGroup>
+              <RegisterModal />
+            </Col>
+          </Container>
         </Modal.Body>
-
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Cancel
